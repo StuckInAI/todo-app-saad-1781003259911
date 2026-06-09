@@ -1,0 +1,56 @@
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-3) var(--space-5);
+  font-size: 0.82rem;
+  color: var(--color-text-muted);
+  background: var(--color-surface-footer);
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+
+.count {
+  min-width: 80px;
+}
+
+.filters {
+  display: flex;
+  gap: var(--space-1);
+}
+
+.filterBtn {
+  background: none;
+  border: 1.5px solid transparent;
+  border-radius: var(--radius-sm);
+  padding: 2px 8px;
+  cursor: pointer;
+  color: var(--color-text-muted);
+  font-size: 0.82rem;
+  transition: border-color 0.15s, color 0.15s;
+}
+
+.filterBtn:hover {
+  border-color: var(--color-border-strong);
+  color: var(--color-text);
+}
+
+.filterBtn.active {
+  border-color: var(--color-accent-muted);
+  color: var(--color-accent);
+}
+
+.clearBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--color-text-muted);
+  font-size: 0.82rem;
+  transition: color 0.15s;
+  min-width: 80px;
+  text-align: right;
+}
+
+.clearBtn:hover {
+  color: var(--color-danger);
+}

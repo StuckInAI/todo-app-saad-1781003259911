@@ -1,0 +1,37 @@
+.page {
+  min-height: 100vh;
+  background: var(--color-bg);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: var(--space-12) var(--space-4);
+}
+
+.container {
+  width: 100%;
+  max-width: 560px;
+}
+
+.title {
+  text-align: center;
+  font-size: 4rem;
+  font-weight: 300;
+  letter-spacing: 0.2em;
+  color: var(--color-accent-muted);
+  margin-bottom: var(--space-6);
+  text-transform: lowercase;
+}
+
+.card {
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+}
+
+.empty {
+  text-align: center;
+  color: var(--color-text-muted);
+  margin-top: var(--space-6);
+  font-size: 0.9rem;
+}
