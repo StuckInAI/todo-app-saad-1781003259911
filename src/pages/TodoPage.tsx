@@ -1,8 +1,8 @@
-import styles from './TodoPage.module.css';
+import { useTodos } from '@/hooks/useTodos';
 import TodoInput from '@/components/TodoInput';
 import TodoList from '@/components/TodoList';
 import TodoFooter from '@/components/TodoFooter';
-import { useTodos } from '@/hooks/useTodos';
+import styles from './TodoPage.module.css';
 
 export default function TodoPage() {
   const {
@@ -24,27 +24,26 @@ export default function TodoPage() {
         <h1 className={styles.title}>todos</h1>
         <div className={styles.card}>
           <TodoInput onAdd={addTodo} />
-          {todos.length > 0 && (
-            <TodoList
-              todos={todos}
-              onToggle={toggleTodo}
-              onDelete={deleteTodo}
-              onEdit={editTodo}
-            />
-          )}
-          {(todos.length > 0 || completedCount > 0) && (
-            <TodoFooter
-              activeCount={activeCount}
-              completedCount={completedCount}
-              filter={filter}
-              onFilterChange={setFilter}
-              onClearCompleted={clearCompleted}
-            />
+          {todos.length > 0 ? (
+            <>
+              <TodoList
+                todos={todos}
+                onToggle={toggleTodo}
+                onDelete={deleteTodo}
+                onEdit={editTodo}
+              />
+              <TodoFooter
+                activeCount={activeCount}
+                completedCount={completedCount}
+                filter={filter}
+                onFilterChange={setFilter}
+                onClearCompleted={clearCompleted}
+              />
+            </>
+          ) : (
+            <p className={styles.empty}>No todos yet. Add one above!</p>
           )}
         </div>
-        {todos.length === 0 && (
-          <p className={styles.empty}>No tasks yet — add one above!</p>
-        )}
       </div>
     </div>
   );
